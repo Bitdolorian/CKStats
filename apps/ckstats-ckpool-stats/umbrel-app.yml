@@ -1,0 +1,4 @@
+id: ckstats-ckpool-stats
+name: CKPool Stats
+version: "1.0.0"
+port: 3000
