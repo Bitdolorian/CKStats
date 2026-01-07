@@ -1,0 +1,18 @@
+version: '3.7'
+services:
+  ckstats:
+    image: node:18
+    working_dir: /app
+    volumes:
+      - /home/umbrel/docker-ckpool-solo/logs:/app/logs
+    command: >
+      bash -c "
+      npm install -g pnpm &&
+      git clone https://github.com/mrv777/ckstats.git /app &&
+      cd /app &&
+      pnpm install &&
+      pnpm build &&
+      pnpm start
+      "
+    ports:
+      - "3000:3000"   
